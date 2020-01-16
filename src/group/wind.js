@@ -2,6 +2,7 @@ import * as GeoTIFF from 'geotiff'
 // import _ from 'lodash'
 import { createLinearGradient } from 'color-mapper'
 import { XYToLnglat, getVortex } from '../utils.js'
+import tiffURL from '../img/merge.tiff'
 
 import point from '../img/point.png' // TODO: 16 * 16
 
@@ -98,29 +99,9 @@ class Wind {
   }
 
   async loadWindData () {
-    const tiff = await GeoTIFF.fromUrl(
-      `http://cdn.shianqi.com/merge_1.tiff`
-    )
+    const tiff = await GeoTIFF.fromUrl(tiffURL)
     const image = await tiff.getImage()
     this.data = await image.readRasters()
-
-    // const req = _.range(1, 49).map(async (index) => {
-    //   const url = `https://static.sencdn.com/hyperspace/data/wind-tiff/merge_${index}.tiff?v=3`
-    //   const tiff = await GeoTIFF.fromUrl(url)
-    //   const image = await tiff.getImage()
-    //   return image.readRasters()
-    // })
-    // const res = await Promise.all(req)
-    // this.data = res[0]
-    // console.log(res)
-
-    // setInterval(() => {
-    //   this.index += 1
-    //   if (this.index >= 48) {
-    //     this.index = 0
-    //   }
-    //   this.data = res[this.index]
-    // }, 300)
   }
 
   addPoints () {

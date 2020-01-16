@@ -4,7 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src --out-dir lib --copy-files && parcel build demo/index.html",
+    "build": "babel src --out-dir lib --copy-files && parcel build demo/index.html --public-url /3d-wind/",
     "build-watch": "babel src --out-dir lib --copy-files --watch",
     "tag": "git tag npm-v$npm_package_version",
     "postversion": "git commit package.json -m \"npm-v$npm_package_version\" && npm run tag && git push && git push --tags",

@@ -1,0 +1,1 @@
+{"version":3,"sources":["style/index.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"style.f355281c.css","sourceRoot":"../demo","sourcesContent":["html, body {\n  margin: 0;\n  width: 100%;\n  height: 100%;\n}\n\n#app {\n  width: 100%;\n  height: 100%;\n}\n"]}

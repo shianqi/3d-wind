@@ -1,0 +1,8 @@
+.cache/
+.vscode/
+demo/
+dist/
+src/
+.editorconfig
+.eslintignore
+.eslintrc.js

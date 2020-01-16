@@ -1,0 +1,5 @@
+dist/
+.cache/
+.vscode/
+libs/
+deploy/tmp

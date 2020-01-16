@@ -1,0 +1,46 @@
+{
+  "name": "3d-wind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib --copy-files && parcel build demo/index.html",
+    "build-watch": "babel src --out-dir lib --copy-files --watch",
+    "tag": "git tag npm-v$npm_package_version",
+    "postversion": "git commit package.json -m \"npm-v$npm_package_version\" && npm run tag && git push && git push --tags",
+    "start-dev": "npm run build && parcel demo/index.html",
+    "eslint": "eslint --ext .js,jsx ./src",
+    "eslint-fix": "eslint --ext .js,jsx ./src --fix",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "eslint": "^5.6.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "gh-pages": "^2.2.0",
+    "in-publish": "^2.0.0",
+    "parcel-bundler": "^1.10.0-beta.1"
+  },
+  "dependencies": {
+    "color-mapper": "0.0.3",
+    "geotiff": "^1.0.0-beta.6",
+    "lodash": "^4.17.11",
+    "three": "^0.96.0",
+    "wheel-indicator": "^1.2.0"
+  }
+}
